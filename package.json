@@ -4,6 +4,7 @@
   "description": "Simple Ticketing System Using NodeJS and MongoDB",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,5 +18,12 @@
     "MongoDB"
   ],
   "author": "Andrew Mooney",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "^1.0.1",
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "mongoose": "^4.7.4",
+    "passport": "^0.3.2"
+  }
 }
