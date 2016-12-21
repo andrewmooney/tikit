@@ -1,5 +1,5 @@
 {
-  "name": "tickit",
+  "name": "tikit",
   "version": "1.0.0",
   "description": "Simple Ticketing System Using NodeJS and MongoDB",
   "main": "index.js",
