@@ -22,7 +22,6 @@ const getTicket = (req, res) => {
 
 const postTicket = (req, res) => {
     const newTicket = new Ticket(req.body);
-
     newTicket.save((err, ticket) => {
         if(err) {
             res.send(err);

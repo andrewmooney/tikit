@@ -3,8 +3,9 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const TicketSchema = new Schema(
+const CommentSchema = new Schema(
     {
+        ticketId: { type: String, required: true },
         subject: { type: String, required: true },
         body: { type: String, required: true },
         user: { type: String, required: true },
@@ -15,7 +16,7 @@ const TicketSchema = new Schema(
     }
 );
 
-TicketSchema.pre('save', function(next) {
+CommentSchema.pre('save', function(next) {
     const now = new Date();
     if(!this.createdAt) {
         this.createdAt = now;
@@ -23,4 +24,4 @@ TicketSchema.pre('save', function(next) {
     next();
 });
 
-module.exports = mongoose.model('ticket', TicketSchema);
+module.exports = mongoose.model('comment', CommentSchema);
