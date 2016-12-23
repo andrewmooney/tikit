@@ -29,13 +29,16 @@ const getTicketComments = (req, res) => {
 }
 
 const postComment = (req, res) => {
+    console.log("Comment content: ", req.body);
     const newComment = new Comment(req.body);
     console.log('Arrived at comment');
     newComment.save((err, comment) => {
         if(err) {
-            res.send(err);
+            console.log(err);
+            return res.sendStatus(500).send(err);
         } else {
-            res.json({notification: "Comment successfully added!", comment});
+            console.log("YAYYYY!!");
+            return res.sendStatus(200).json({notification: "Comment successfully added!", comment});
         } 
     });
 }
