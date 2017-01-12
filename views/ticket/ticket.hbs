@@ -1,0 +1,30 @@
+<div id="main" class="group">
+    {{#if ticket}}
+    <section class="ticket">
+        <h3>{{ ticket.subject }}</h3>
+        <span class="user-details">Ticket created by {{ ticket.user }} on {{ ticket.date }} | Number of attchments 2</span>
+        <p class="ticket-details">
+            {{ ticket.body }}
+        </p>
+        <section id="comments" class="group">
+            {{#each ticket.comments}}
+            <section class="comment">
+                <h3>{{ this.user }} commented on {{ this.date }}</h3>
+                <p class="comment-details">
+                    {{ this.body }}
+                </p>
+            </section>
+            {{/each }}
+
+            <section id="addComment">
+                <form action="/api/comment" method="post">
+                    <input class="formEl" type="hidden" name="ticketId" value="{{ ticket._id }}" />
+                    <input class="formEl" type="hidden" name="user" value="{{ ticket.user }}" />
+                    <textarea class="formEl" name="body" id="comment" cols="30" rows="10"></textarea>
+                    <input id="submitComment" class="submit" type="submit" value="Add" />
+                </form>
+            </section>
+        </section>
+    </section>
+    {{/if}}
+</div>

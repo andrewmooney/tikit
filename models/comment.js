@@ -6,7 +6,6 @@ const Schema = mongoose.Schema;
 const CommentSchema = new Schema(
     {
         ticketId: { type: String, required: true },
-        subject: { type: String, required: true },
         body: { type: String, required: true },
         user: { type: String, required: true },
         createdAt: { type: Date, default: Date.now },

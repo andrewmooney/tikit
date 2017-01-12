@@ -1,12 +1,13 @@
 'use strict';
 
 const mongoose = require('mongoose');
-const Ticket = require('../models/ticket');
+const ticket = require('../models/ticket');
 
+// API Routes
 const getTickets = (req, res) => {
     let query = Ticket.find({});
     query.exec((err, tickets) => {
-        if(err) res.send(err);
+        if (err) res.send(err);
 
         res.json(tickets);
     });
@@ -23,27 +24,27 @@ const getTicket = (req, res) => {
 const postTicket = (req, res) => {
     const newTicket = new Ticket(req.body);
     newTicket.save((err, ticket) => {
-        if(err) {
+        if (err) {
             res.send(err);
         } else {
-            res.json({notification: "Ticket successfully added!", ticket});
-        } 
+            res.json({ notification: "Ticket successfully added!", ticket });
+        }
     });
 }
 
 const deleteTicket = (req, res) => {
-    Ticket.remove({_id: req.params.id}, (err, result) => {
+    Ticket.remove({ _id: req.params.id }, (err, result) => {
         res.json({ notification: "Ticket succesfully deleted!", result });
     });
 }
 
-const updateTicket = (req, res) =>{
-    Ticket.findById({_id: req.params.id}, (err, ticket) => {
-        if(err) res.send(err);
+const updateTicket = (req, res) => {
+    Ticket.findById({ _id: req.params.id }, (err, ticket) => {
+        if (err) res.send(err);
 
         Object.assign(ticket, req.body).save((err, ticket) => {
-            if(err) res.send(err);
-            res.json({ message: "Ticket updated!", ticket});
+            if (err) res.send(err);
+            res.json({ message: "Ticket updated!", ticket });
         });
     });
 }

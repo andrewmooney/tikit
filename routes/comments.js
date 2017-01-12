@@ -38,7 +38,7 @@ const postComment = (req, res) => {
             return res.sendStatus(500).send(err);
         } else {
             console.log("YAYYYY!!");
-            return res.sendStatus(200).json({notification: "Comment successfully added!", comment});
+            return res.json({notification: "Comment successfully added!", comment});
         } 
     });
 }

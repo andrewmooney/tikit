@@ -1,0 +1,96 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Rubik', sans-serif;
+    background: #eee;
+    color: #2c2c2c;
+    min-height: 100%;
+}
+
+#sidebar {
+    background: #ce2c43;
+    flex: 1;
+    min-height: 100%;
+}
+
+#tickets,
+#main {
+    max-width: 800px;
+    margin: auto auto;
+    flex: 1;
+    min-height: 100%;
+}
+
+#tickets li {
+    list-style: none;
+}
+
+.ticket {
+    margin: 10px 0;
+    width: 100%;
+    padding: 10px;
+    background: #fff;
+}
+
+.ticket h3 {
+    margin: 5px;
+}
+
+.ticket>span.user-details {
+    margin: 5px 0;
+    padding: 5px;
+    font-style: italic;
+    font-size: 0.8rem;
+}
+
+#comments {
+    margin: 10px 0 0 0;
+}
+
+.comment {
+    padding: 5px;
+    background: #efefef;
+    margin-bottom: 10px;
+}
+
+.ticket p.ticket-details,
+.comment p.comment-details {
+    padding: 5px;
+    line-height: 1.5rem;
+}
+
+p.comment-details {
+    font-size: 0.9rem;
+}
+
+.view-details {
+    font-size: 0.9rem;
+    text-align: right;
+}
+
+#addComment textarea {
+    width: 100%;
+    height: 200px;
+    border: 1px solid #c5c5c5;
+}
+
+.submit {
+    border: none;
+    background: #34b334;
+    width: 100px;
+    height: 40px;
+    color: #fff;
+    font-size: 1rem;
+    float: right;
+    clear: both;
+    margin: 10px 0;
+}
+
+.group:after {
+    content: "";
+    display: table;
+    clear: both;
+}

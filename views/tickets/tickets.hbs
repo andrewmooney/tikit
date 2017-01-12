@@ -1,0 +1,19 @@
+<h1>{{ title }}</h1>
+<section id="tickets">
+
+    {{#if tickets}}
+        <div>We have tickets </div>
+    {{/if}}
+
+    {{#each tickets}}
+        <section class="ticket">
+            <h3> {{ this.subject }} </h3>
+            <span class="user-details">Ticket created by {{ this.user }} on {{ this.createdAt }} | Number of attchments 2</span>
+            <p class="ticket-details">
+                {{ this.body }}
+            </p>
+            <a href="./ticket/{{ this._id }}" class="view-details">View all details</a>
+        </section>
+    {{/each}}
+
+</section>
